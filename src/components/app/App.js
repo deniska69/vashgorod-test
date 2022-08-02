@@ -1,8 +1,15 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Landing from '../pages/landing/Landing';
+
 const App = () => {
   return (
-    <div className="App">
-      ВашГород.ру
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="*" element={<Landing />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
