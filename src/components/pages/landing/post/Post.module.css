@@ -1,0 +1,21 @@
+.Post {
+    display: flex;
+    flex-direction: row;
+}
+.Post:hover {
+    cursor: pointer;
+}
+
+.Image {
+    max-width: 12.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.Header {
+    color: #333;
+}
+
+.Litera {
+    color: #333;
+}

@@ -2,6 +2,7 @@
     min-height: 100vh;
     max-width: 600px;
     display: flex;
+    flex-direction: column;
     padding-left: 4vw;
     padding-right: 4vw;
     row-gap: 2rem;

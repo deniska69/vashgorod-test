@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getAllNews } from '../../../actions/news';
 
 import classes from './Landing.module.css';
+import Post from './post/Post';
 
 const Landing = () => {
     const dispatch = useDispatch();
+    const listNews = useSelector(state => state.news.allNews); 
 
     useEffect(()=>{
         dispatch(getAllNews());
@@ -14,7 +16,9 @@ const Landing = () => {
 
     return(
         <div className={classes.Landing}>
-            Лэндинг
+            {listNews.map((post, index) => (
+                <Post key={index} post={post} />
+            ))}
         </div>
     );
 };
