@@ -6,7 +6,6 @@ import axios from 'axios';
 
 import classes from './Landing.module.css';
 import Post from './post/Post';
-//import Loader from '../../ui/loader/Loader';
 
 const Landing = () => {
     const dispatch = useDispatch();
