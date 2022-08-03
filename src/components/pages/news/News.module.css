@@ -1,8 +1,0 @@
-.Wrap {
-    max-width: 600px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    padding: 2vw;
-}
