@@ -17,9 +17,8 @@ const Landing = () => {
 
     useEffect(()=>{
         if(isLoading){
-            axios.get(`${API_URL}news/?city=1&group_id=1731&with_image=1&fields=id,url,header,litera,image,dt_publish&page=${currentPageNumber}`)
+            axios.get(`${API_URL}${currentPageNumber}`)
                 .then(response => {
-                    console.log(response.data._meta.pageCount);
                     dispatch(setAllNews(response.data.items));
                     dispatch(setCurrentPageNumber(currentPageNumber + 1));
                     dispatch(setPageCountTotal(response.data._meta.pageCount));
