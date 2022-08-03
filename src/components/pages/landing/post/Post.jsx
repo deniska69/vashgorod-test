@@ -23,7 +23,7 @@ const Post = ({post}) => {
                 <Col xs={8} sm={9} md={8} style={{ padding: '0', marginLeft: '0.7em' }}>
                     <Row style={{ margin: '0 0 0.7em 0', fontSize: '1.3em', color: '#333', lineHeight: '1.2', fontWeight: '500' }}>{post.header}</Row>
                     <Row style={{ margin: '0 0 0.7em 0', fontSize: '1rem', color: '#333', lineHeight: '1.2' }}>{post.litera}</Row>
-                    <Row style={{ margin: '0', fontSize: '0.8em', color: '#999' }}>{post.dt_publish}</Row>
+                    <Row style={{ margin: '0', fontSize: '0.8em', color: '#999' }}>{new Date(post.dt_publish).toLocaleString('ru-RU', { timeZone: 'Asia/Novosibirsk' })}</Row>
                 </Col>
             </Row>
         </Card>
