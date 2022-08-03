@@ -10,12 +10,12 @@ import Image from 'react-bootstrap/Image'
 const Post = ({post}) => {
     const navigate = useNavigate();
 
-    const clickToCard = () => {
-        navigate(`/news/${post.id}`);
-    }
+    const clickToCard = (id) => {
+        navigate(`/news/${id}`);
+    };
 
     return(
-        <Card className={classes.Card} style={{ padding: '1rem', cursor: 'pointer' }}>
+        <Card className={classes.Card} style={{ padding: '1rem', cursor: 'pointer' }} onClick={() => clickToCard(post.id)}>
             <Row style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
                 <Col xs={3} sm={2} md={3} style={{ padding: '0' }}>
                     <Image src={post.image} style={{ maxWidth: '100%', maxHeight: '120px', overflow: 'hidden' }} rounded />
@@ -27,21 +27,7 @@ const Post = ({post}) => {
                 </Col>
             </Row>
         </Card>
-    )
-
-    // return(
-    //     <div className={classes.Post} onClick={() => clickToCard()}>
-    //         <img className={classes.Image} 
-    //              src={post.image} 
-    //              alt={post.id} />
-    //         <div className={classes.Header}>
-    //             {post.header}
-    //         </div>
-    //         <div className={classes.Litera}>
-    //             {post.litera}
-    //         </div>
-    //     </div>
-    // );
+    );
 };
 
 export default Post;

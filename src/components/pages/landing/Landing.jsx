@@ -16,14 +16,14 @@ const Landing = () => {
 
     useEffect(()=>{
         if(isLoading){
-            axios.get(`${API_URL}${currentPageNumber}`)
+            axios.get(`${API_URL}?city=1&group_id=1731&with_image=1&fields=id,url,header,litera,image,dt_publish&page=${currentPageNumber}`)
                 .then(response => {
                     dispatch(setAllNews(response.data.items));
                     dispatch(setCurrentPageNumber(currentPageNumber + 1));
                     dispatch(setPageCountTotal(response.data._meta.pageCount));
                 })
                 .finally(() => setIsLoading(false));
-        }
+        };
 
         // eslint-disable-next-line
     },[isLoading]);
@@ -41,8 +41,8 @@ const Landing = () => {
     const scrollHandler = (e) => {
         if(e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 100 && currentPageNumber < pageCountTotal) {
             setIsLoading(true);
-        }
-    }
+        };
+    };
 
     return(
         <div className={classes.Landing}>
