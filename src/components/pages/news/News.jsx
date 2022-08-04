@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { API_URL } from '../../../core/config';
+// import { API_URL } from '../../../core/config';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -21,7 +21,7 @@ const News = () => {
     };
 
     useEffect(()=>{
-        axios.get(`${API_URL}${id}`)
+        axios.get(`https://api.vashgorod.ru/v1/news/${id}`)
                 .then(response => {
                     setHeader(response.data.header);
                     setText(response.data.body);
