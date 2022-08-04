@@ -21,12 +21,15 @@ const News = () => {
     };
 
     useEffect(()=>{
-        axios.get(`https://api.vashgorod.ru/v1/news/${id}`, { headers: { 'Content-Type': 'application/json' } }, {crossDomain: true}, {withCredentials: true})
-                .then(response => {
-                    setHeader(response.data.header);
-                    setText(response.data.body);
-                    setDate(new Date(response.data.dt_publish).toLocaleString('ru-RU', { timeZone: 'Asia/Novosibirsk' }));
-                })
+        axios.get(`https://api.vashgorod.ru/v1/news/${id}`, 
+            { headers: { 'Content-Type': 'application/json' } }, 
+            { crossDomain: true }, 
+            { withCredentials: true })
+            .then(response => {
+                setHeader(response.data.header);
+                setText(response.data.body);
+                setDate(new Date(response.data.dt_publish).toLocaleString('ru-RU', { timeZone: 'Asia/Novosibirsk' }));
+            })
 
         // eslint-disable-next-line
     },[]);
