@@ -1,2 +1,2 @@
-export const API_URL = process.env.REACT_APP_API_URL;
-export const WWW_URL = process.env.REACT_APP_WWW_URL;
+export const API_URL = 'https://api.vashgorod.ru/v1/news/';
+export const WWW_URL = 'http://localhost:3000/';
