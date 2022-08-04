@@ -16,7 +16,7 @@ const Landing = () => {
 
     useEffect(()=>{
         if(isLoading){
-            axios.get(`https://api.vashgorod.ru/v1/news/?city=1&group_id=1731&with_image=1&fields=id,url,header,litera,image,dt_publish&page=${currentPageNumber}`)
+            axios.get(`https://api.vashgorod.ru/v1/news/?city=1&group_id=1731&with_image=1&fields=id,url,header,litera,image,dt_publish&page=${currentPageNumber}`, { headers: { 'Content-Type': 'application/json' } }, {crossDomain: true}, {withCredentials: true})
                 .then(response => {
                     dispatch(setAllNews(response.data.items));
                     dispatch(setCurrentPageNumber(currentPageNumber + 1));

@@ -21,7 +21,7 @@ const News = () => {
     };
 
     useEffect(()=>{
-        axios.get(`https://api.vashgorod.ru/v1/news/${id}`)
+        axios.get(`https://api.vashgorod.ru/v1/news/${id}`, { headers: { 'Content-Type': 'application/json' } }, {crossDomain: true}, {withCredentials: true})
                 .then(response => {
                     setHeader(response.data.header);
                     setText(response.data.body);
