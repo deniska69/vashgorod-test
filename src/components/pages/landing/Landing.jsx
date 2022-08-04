@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAllNews, setCurrentPageNumber, setPageCountTotal } from '../../../reducers/newsReducer';
-// import { API_URL } from '../../../core/config';
+import { API_URL } from '../../../core/config';
 import axios from 'axios';
 
 import classes from './Landing.module.css';
@@ -16,7 +16,7 @@ const Landing = () => {
 
     useEffect(()=>{
         if(isLoading){
-            axios.get(`https://api.vashgorod.ru/v1/news/?city=1&group_id=1731&with_image=1&fields=id,url,header,litera,image,dt_publish&page=${currentPageNumber}`, 
+            axios.get(`${API_URL}?city=1&group_id=1731&with_image=1&fields=id,url,header,litera,image,dt_publish&page=${currentPageNumber}`, 
                 { headers: { 'Content-Type': 'application/json' } }, 
                 { crossDomain: true }, 
                 { withCredentials: true })
